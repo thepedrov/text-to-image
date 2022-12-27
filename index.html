@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <title>Text To Image</title>
+    <meta name="description" content="Creates an image from scratch from a text description.">
+
+    <meta property="og:title" content="Text To Image">
+    <meta property="og:description" content="Creates an image from scratch from a text description.">
+    <meta property="og:image" content="images/og.jpg">
+
+    <!-- Favicon: https://www.flaticon.com/free-icon/paint_1158164 -->
+    <link rel="icon" type="image/x-icon" href="favicon.ico">
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="apple-touch-icon" href="favicon.png">
+
+    <link rel="stylesheet" href="css/bootstrap.min.css">
+    <link rel="stylesheet" href="css/style.css">
+
+    <script src="js/jquery-3.6.1.min.js"></script>
+    <script type="module" src="js/script.js"></script>
+</head>
+
+<body class="text-white text-center">
+    <div class="vertical-center">
+        <div class="container border border-1 border-secondary rounded">
+            <div class="row">
+                <div class="col">
+                    <h1 class="title">Text To Image</h1>
+                    <h6 class="text-primary">With AI</h6>
+                </div>
+            </div>
+            <hr class="my-1">
+            <div class="row">
+                <div class="col">
+                    <h5>Create an image from text prompt</h5>
+                </div>
+            </div>
+            <form id="frmTextToImg">
+                <div class="row">
+                    <div class="col">
+                        <input class="form-control w-100" type="search" id="txtPrompt" placeholder="Enter your prompt" autocomplete="off" maxlength="60" required>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col-6">
+                        <div class="title-field">No. of images</div>
+                        <div><input class="form-check-input" type="radio" id="rdNo1" name="noImages" value="1"> <label for="rdNo1">1</label></div>
+                        <div><input class="form-check-input" type="radio" id="rdNo2" name="noImages" value="2"> <label for="rdNo2">2</label></div>
+                        <div><input class="form-check-input" type="radio" id="rdNo3" name="noImages" value="3" checked> <label for="rdNo3">3</label></div>
+                    </div>
+                    <div class="col-6">
+                        <div class="title-field">Resolution</div>
+                        <div><input class="form-check-input" type="radio" id="rdRes256" name="resImg" value="256x256"> <label for="rdRes256">256x256</label></div>
+                        <div><input class="form-check-input" type="radio" id="rdRes512" name="resImg" value="512x512"> <label for="rdRes512">512x512</label></div>
+                        <div><input class="form-check-input" type="radio" id="rdRes1024" name="resImg" value="1024x1024" checked> <label for="rdRes1024">1024x1024</label></div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="col">
+                        <button class="btn btn-outline-light w-100" id="btnCreate">Create</button>
+                    </div>
+                </div>
+            </form>
+        </div>
+    </div>
+
+    <div class="container border border-1 border-secondary rounded" id="results">
+    </div>
+
+    <div class="back-to-top">
+        <!-- Icon: https://www.flaticon.com/free-icon/up-arrow_992703 -->
+        <img src="images/back_to_top.png" title="Back To Top">
+    </div>
+</body>
+
+</html>
